@@ -1,0 +1,396 @@
+\documentclass{article}
+
+\input{settings}
+\usetikzlibrary{shapes.geometric, calc}
+%\everymath{\displaystyle}
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newdate{DueDate}{28}{01}{2015} % Due date in {dd}{mm}{yyyy}
+\newcommand{\hmwkTitle}{Homework\ 2} % Assignment title
+\newcommand{\hmwkDueDate}{\dayofweekname{\getdateday{DueDate}}{\getdatemonth{DueDate}}{\getdateyear{DueDate}} \displaydate{DueDate}} % Due date
+\newcommand{\hmwkClass}{PHYS\ 161} % Course/class
+\newcommand{\hmwkClassTime}{11:00am} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Professor Landee} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhuoming Tan} % Your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+\newpage
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+%\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+	(II-1) Find a unit vector $\hat{\mathbf{n}}$ normal to each of the following surfaces.
+	\begin{multicols}{2}
+		\begin{enumerate}[label=(\alph*)]
+			\item $z=2-x-y$
+			\item $z=(x^2+y^2)^{1/2}$
+			\item $z=(1-x^2)^{1/2}$
+			\item $z=x^2+y^2$
+			\item $z=(1-x^2/a^2-y^2/a^2)^{1/2}$
+		\end{enumerate}
+	\end{multicols}
+	% Question
+
+	\problemAnswer{
+		Using the principle ideal of (II-4),
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				$f(x,y,z)=x+y+z-2=0$. So $\mathbf{n}=\nabla f=
+				\begin{bmatrix}
+					1 \\
+					1 \\
+					1 \\
+				\end{bmatrix}$. $\hat{\mathbf{n}}=
+				\begin{bmatrix}
+					1/3^{1/3} \\
+					1/3^{1/3} \\
+					1/3^{1/3} \\
+				\end{bmatrix}$.
+			\end{item}
+			\begin{item}
+				For $z=(x^2+y^2)^{1/2}$, $\mathbf{n}=
+				\begin{bmatrix}
+					\frac{\partial}{\partial x}(x^2+y^2)^{1/2} \\
+					\frac{\partial}{\partial y}(x^2+y^2)^{1/2} \\
+					-1
+				\end{bmatrix}=
+				\begin{bmatrix}
+					x(x^2+y^2)^{-1/2} \\
+					y(x^2+y^2)^{-1/2} \\
+					-1
+				\end{bmatrix}$. $\hat{\mathbf{n}}=
+				\begin{bmatrix}
+					x((x^2+y^2)/2)^{-1/2} \\
+					y((x^2+y^2)/2)^{-1/2} \\
+					-1/\sqrt{2}
+				\end{bmatrix}$.
+			\end{item}
+			\begin{item}
+				$\displaystyle\hat{\mathbf{n}}=\frac{\hat{\mathbf{i}}\frac{\partial f}{\partial x}+\hat{\mathbf{j}}\frac{\partial f}{\partial y}-\hat{\mathbf{k}}}{\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}}=\frac{-x(1-x^2)^{-1/2}\hat{\mathbf{i}}-\hat{\mathbf{k}}}{\sqrt{\frac{1}{1-x^2}}}=-x\hat{\mathbf{i}}-(1-x^2)^{1/2}\hat{\mathbf{k}}=-x\hat{\mathbf{i}}-z\hat{\mathbf{k}}$
+			\end{item}
+			\begin{item}
+				$\displaystyle\hat{\mathbf{n}}=\frac{\hat{\mathbf{i}}\frac{\partial f}{\partial x}+\hat{\mathbf{j}}\frac{\partial f}{\partial y}-\hat{\mathbf{k}}}{\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}}=\frac{2x\hat{\mathbf{i}}+2y\hat{\mathbf{j}}-\hat{\mathbf{k}}}{\sqrt{1+4x^2+4y^2}}=\frac{2x\hat{\mathbf{i}}+2y\hat{\mathbf{j}}-\hat{\mathbf{k}}}{\sqrt{1+4z}}$
+			\end{item}
+			\begin{item}
+				\begin{align*}
+					\displaystyle\hat{\mathbf{n}}=&\frac{\hat{\mathbf{i}}\frac{\partial f}{\partial x}+\hat{\mathbf{j}}\frac{\partial f}{\partial y}-\hat{\mathbf{k}}}{\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}} \\
+					=&\frac{-x/a^2(1-x^2/a^2-y^2/a^2)^{-1/2}\hat{\mathbf{i}}-y/a^2(1-x^2/a^2-y^2/a^2)^{-1/2}\hat{\mathbf{j}}-\hat{\mathbf{k}}}{\sqrt{1+(4x^2+4y^2)/(a^4(1-x^2/a^2-y^2/a^2))}} \\
+					=&\frac{-x\hat{\mathbf{i}}-y\hat{\mathbf{j}}-a^2z\hat{\mathbf{k}}}{a\sqrt{a^2+4(x^2+y^2)}}
+				\end{align*}
+			\end{item}
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-2)
+	\begin{enumerate}[label=(\alph*)]
+		\begin{item}
+			Show that the unit vector normal to the plane
+			\[
+				ax+by+cz=d
+			\]
+			is given by
+			\[
+				\hat{\mathbf{n}}=\pm(\hat{\mathbf{i}}a+\hat{\mathbf{j}}b+\hat{\mathbf{k}}c)/(a^2+b^2+c^2)^{1/2}
+			\]
+		\end{item}
+		\item Explain in geometric terms why this expression for $\hat{\mathbf{n}}$ is independent of the constant $d$.
+	\end{enumerate}
+	% Question
+
+	\problemAnswer{
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				As indicated in book, for $f(x,y,z)=ax+by+cz+d$, $\displaystyle\hat{\mathbf{n}}=\pm\frac{\hat{\mathbf{i}}\frac{\partial f}{\partial x}+\hat{\mathbf{j}}\frac{\partial f}{\partial y}+\hat{\mathbf{k}}\frac{\partial f}{\partial z}}{\sqrt{\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2+\left(\frac{\partial f}{\partial z}\right)^2}}=\pm\frac{\hat{\mathbf{i}}a+\hat{\mathbf{j}}b+\hat{\mathbf{k}}c}{(a^2+b^2+c^2)^{1/2}}$.
+			\end{item}
+			\item $d$ in the equation could be imagined as shifting the surface up or down along $z$ axis, which do not change the shape of the surface. Therefore the unit normal vector does not change at all.
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-4) In each of the following use Equation II-12 to evaluate the surface integral $\iint_S G(x,y,z)\,dS$.
+	\begin{enumerate}[label=(\alph*)]
+		\item $$G(x,y,z)=z$$ where $S$ is the portion of the plane $x+y+z=1$ in the first octant.
+		\item $$G(x,y,z)=\frac{1}{1+4(x^2+y^2)}$$ where $S$ is the portion of the paraboloid $z=x^2+y^2$ between $z=0$ and $z=1$.
+		\item $$G(x,y,z)=(1-x^2-y^2)^{3/2}$$ where $S$ is the hemisphere $z=(1-x^2-y^2)^{1/2}$.
+	\end{enumerate}
+	% Question
+
+	\problemAnswer{
+		\begin{equation}\tag{II-12}
+			\iint_S G(x,y,z)\,dS=\iint_R G[x,y,f(x,y)]\cdot\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}\,dx\,dy
+		\end{equation}
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				So $z=f(x,y)=1-x-y$. This gives $\frac{\partial f}{\partial x}=-1$, and $\frac{\partial f}{\partial y}=-1$. So $\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}=\sqrt{3}$. The region $R$ becomes the area in $xy$-plane in the first quardrant that $x+y<1$, a triangle. So
+				\[
+					\iint_S z\,dS=\sqrt{3}\iint_R(1-x-y)\,dx\,dy=\sqrt{3}\int_0^{1-x}\int_0^1(1-x-y)\,dx\,dy=\frac{\sqrt{3}}{6}
+				\]
+			\end{item}
+			\begin{item}
+				$z=f(x,y)=x^2+y^2$. This gives $\frac{\partial f}{\partial x}=2x$, and $\frac{\partial f}{\partial y}=2y$. So $\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}=\sqrt{1+4(x^2+y^2)}$. The region $R$ becomes the circle in $xy$-plane with $x^2+y^2=1$.
+				\[
+					\iint_S z\,dS=\iint_R\frac{1}{\sqrt{1+4(x^2+y^2)}}\,dx\,dy=\int_0^1\int_0^{2\pi}\frac{1}{\sqrt{1+4r^2}}r\,d\theta\,dr=\frac{(\sqrt{5}-1)\pi}{2}
+				\]
+			\end{item}
+			\begin{item}
+				$\frac{\partial f}{\partial x}=-x(1-x^2-y^2)^{-1/2}$, and $\frac{\partial f}{\partial y}=-y(1-x^2-y^2)^{-1/2}$. $\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}=\sqrt{1+\frac{x^2+y^2}{1-x^2-y^2}}=(1-x^2-y^2)^{-1/2}$. The region $R$ is the circle in $xy$-plane with $x^2+y^2=1$.
+				\[
+					\iint_S z\,dS=\iint_R(1-x^2-y^2)\,dx\,dy=\int_0^1\int_0^{2\pi}(1-r^2)r\,d\theta\,dr=\frac{\pi}{2}
+				\]
+			\end{item}
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-5) In each of the following... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		\begin{equation}\tag{II-13}
+			\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iint_R\left\{-F_x[x,y,f(x,y)]\frac{\partial f}{\partial x}-F_y[x,y,f(x,y)]\frac{\partial f}{\partial y}+F_z[x,y,f(x,y)]\right\}\,dx\,dy
+		\end{equation}
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				$z=f(x,y)=1-x/2-y/2$. $\frac{\partial f}{\partial x}=-1/2$, $\frac{\partial f}{\partial y}=-1/2$. $F_x=x$, $F_y=0$, $F_z=-z$. $R$ is the triangle region in the first quadrant of the $xy$-plane. So
+				\[
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\int_0^{2-x}\int_0^2(x+y/2-1)\,dx\,dy=0
+				\]
+			\end{item}
+			\begin{item}
+				$\frac{\partial f}{\partial x}=-x(a^2-x^2-y^2)^{-1/2}$, $\frac{\partial f}{\partial y}=-y(a^2-x^2-y^2)^{-1/2}$.
+				\[
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iint_R\left(\frac{x^2+y^2}{(a^2-x^2-y^2)^{1/2}}+(a^2-x^2-y^2)^{1/2}\right)\,dx\,dy=\iint_R\frac{a^2}{(a^2-x^2-y^2)^{1/2}}\,dx\,dy
+				\]
+				With a change in varibles,
+				\[
+					\iint_R\frac{a^2}{(a^2-x^2-y^2)^{1/2}}\,dx\,dy=\int_0^a\int_0^{2\pi}\frac{a^2}{(a^2-r^2)^{1/2}}r\,d\theta\,dr=2\pi a^3
+				\]
+			\end{item}
+			\begin{item}
+				$\frac{\partial f}{\partial x}=-2x$, $\frac{\partial f}{\partial y}=-2y$. $R$ again becomes the circle $x^2+y^2=1$ on the $xy$-plane. The integral then becomes
+				\[
+					\iint_R(2y^2+1)\,dx\,dy=4\int_0^{\sqrt{1-x^2}}\int_0^1(2y^2+1)\,dx\,dy=\frac{3\pi}{2}
+				\]
+			\end{item}
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-6) The distribution of mass... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		Total mass of the shell is
+		\[
+			\iint\sigma(x,y,z)\,ds=\iint\sigma(x,y)\sqrt{1+\left(\frac{\partial f}{\partial x}\right)^2+\left(\frac{\partial f}{\partial y}\right)^2}\,dx\,dy=\frac{1}{R}\iint\frac{\sigma_0(x^2+y^2)}{\sqrt{R^2-x^2-y^2}}
+		\]
+		A change of variables gives
+		\[
+			\frac{\sigma_0}{R}\int_0^R\int_0^{2\pi}\frac{r^3}{\sqrt{R^2-r^2}}\,d\theta\,dr=\frac{4\pi R^2\sigma_0}{3}
+		\]
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-10) It sometimes happens that surface... (problem omitted)
+	% Question
+
+	\problemAnswer{
+	(II-30)
+		\begin{enumerate}[label=(\alph*)]
+			\item Take the $S$ square in $xy$-plane as example. The integral becomes $\iint_Sz\,dS$, which obviously equals 0. The same conclusion applies to the other two squares. So the integral is 0.
+			\begin{item}
+				The top and bottom contribute 0 to the integral. We only have to calculate the side surface. From
+				\begin{equation}\tag{II-30}
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iiint_V\nabla\cdot\mathbf{F}\,dV
+				\end{equation}
+				$\nabla\cdot\mathbf{F}=\ln(x^2+y^2)+\frac{2x^2}{x^2+y^2}+\ln(x^2+y^2)+\frac{2y^2}{x^2+y^2}=2\ln(x^2+y^2)+2$. So
+				\[
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iiint_V(2\ln(x^2+y^2)+2)\,dV
+				\]
+				Change the variables into cylindrical coordinates.
+				\[
+					\iiint_V(2\ln(x^2+y^2)+2)\,dV=\int_0^h\int_0^{2\pi}\int_0^R(2\ln(r^2)+2)r\,dr\,d\phi\,dz=4h\pi R^2\ln R
+				\]
+				It is now obvious that the integral is actually $V\ln R^2$, where $V$ is the volume of the cylinder and $R^2=x^2+y^2$.
+			\end{item}
+			\begin{item}
+				For the sphere with radius $R$, $\mathbf{F}=(\mathbf{i}x+\mathbf{j}y+\mathbf{k}z)e^{-R^2}$. $\nabla\cdot\mathbf{F}=3e^{-R^2}$. Therefore $\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iiint_V\nabla\cdot\mathbf{F}\,dV=e^{-R^2}\iiint_V\,dV=3e^{-R^2}\times\frac{4}{3}\pi R^3=4\pi R^3e^{-R^2}$.
+			\end{item}
+			\item Only two surfaces parallel to the $yz$-plane has contribution to the integral. $\nabla\cdot\mathbf{F}=E'(x)$. Therefore $\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iiint_V\nabla\cdot\mathbf{F}\,dV=b^2\int_0^bE'(x)\,dx=b^2[E(b)-E(0)]$.
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 7
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-14) Calculate the divergence... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		This is rather simple.
+		\begin{multicols}{2}
+			\begin{enumerate}[label=(\alph*)]
+				\item $2x+2y+2z$
+				\item 0
+				\item $-e^{-x}-e^{-y}-e^{-z}$
+				\item $2z$
+				\item $\frac{-y}{x^2+y^2}$
+				\item 0
+				\item 3
+				\item 0
+			\end{enumerate}
+		\end{multicols}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 8
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-15) (a) Calculate $\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS$ for... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				\begin{align*}
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS&=\iiint_V\nabla\cdot\mathbf{F}\,dV \\
+					&=2\iiint_V(x+y+z)\,dV \\
+					&=2\int_{x_0-s/2}^{x_0+s/2}\int_{y_0-s/2}^{y_0+s/2}\int_{z_0-s/2}^{z_0+s/2}(x+y+z)\,dz\,dy\,dx \\
+					&=2s^3(x_0+y_0+z_0)
+				\end{align*}
+			\end{item}
+			\item $2s^3(x_0+y_0+z_0)/s^3=2(x_0+y_0+z_0)$. It is the divergence evaluated at point $(x_0,y_0,z_0)$.
+			\begin{item}
+				For II-14(b), $\textrm{div }\mathbf{F}=0$, so $\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iiint_V\nabla\cdot\mathbf{F}\,dV=0$.
+
+				For II-14(c),
+				\begin{align*}
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS&=\iiint_V\nabla\cdot\mathbf{F}\,dV \\
+					&=\int_{x_0-s/2}^{x_0+s/2}\int_{y_0-s/2}^{y_0+s/2}\int_{z_0-s/2}^{z_0+s/2}(-e^{-x}-e^{-y}-e^{-z})\,dz\,dy\,dx
+				\end{align*}
+				Using CAS system, this result is $-2(e^{-x_0}+e^{-y_0}+e^{-z_0})s^2\sinh(s/2)$. So this result devided by $s^3$ is $-2(e^{-x_0}+e^{-y_0}+e^{-z_0})\sinh(s/2)/s$.
+				\[
+					\lim_{s\rightarrow0}\frac{-2(e^{-x_0}+e^{-y_0}+e^{-z_0})\sinh(s/2)}{s}=0
+				\]
+			\end{item}
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 9
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-16) (a) Calculate the divergence... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		\begin{enumerate}[label=(\alph*)]
+			\item In Cartesian coordinates, $\textrm{div }\mathbf{F}=\nabla\cdot\mathbf{F}=\frac{\partial f(x)}{\partial x}+\frac{\partial f(y)}{\partial y}+\frac{\partial f(-2z)}{\partial z}=f'(x)+f'(y)-2f'(-2z)$. So at $(c,c,-c/2)$, $\textrm{div }\mathbf{F}=f'(c)+f'(c)-2f'(c)=0$.
+			\item Obviously, each of the functions $f,g,h$ does not have dependence on the corresponding coordinate. so $\textrm{div }\mathbf{G}=0$.
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 10
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(II-23) Verify the divergence theorem... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				The surface integral could be devided into three parts, each at $b$ of the three coordinates.
+				\[
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\int_0^b\int_0^bb\,dy\,dz+\int_0^b\int_0^bb\,dx\,dz+\int_0^b\int_0^bb\,dx\,dy=3b^3
+				\]
+				\[
+					\iiint_V\nabla\cdot\mathbf{F}\,dV=3\iiint_V\,dV=3b^3
+				\]
+			\end{item}
+			\begin{item}
+				The surface integral could be devided into two parts, the top of the cylinder, with unit normal vector $\hat{\mathbf{e}}_z$ and the outer curved surface, with unit normal vector $\hat{\mathbf{e}}_r$. The two surfaces on $xz$- and $yz$-plane is obviously zero.
+				\[
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iint_{S_1}h\,dS+\iint_{S_2}R\,dS=\frac{1}{4}\pi R^2h+\frac{1}{4}\times2\pi R\times R=\frac{3\pi R^2h}{4}
+				\]
+				For this function in cylindrical coordinates,
+				\[
+					\textrm{div }\mathbf{F}=\frac{1}{r}\frac{\partial}{\partial r}(rF_r)+\frac{\partial F_z}{\partial z}=2+1=3
+				\]
+				\[
+					\iiint_V\nabla\cdot\mathbf{F}\,dV=3\iiint_V\,dV=\frac{3\pi R^2h}{4}
+				\]
+			\end{item}
+			\begin{item}
+				\[
+					\iint_S\mathbf{F}\cdot\hat{\mathbf{n}}\,dS=\iint_S R^2\,dS=4\pi R^4
+				\]
+				For this function in spherical coordinates,
+				\[
+					\textrm{div }\mathbf{F}=\frac{1}{r^2}\frac{\partial}{\partial r}(r^2F_r)=4r
+				\]
+				\[
+					\iiint_V\nabla\cdot\mathbf{F}\,dV=4\iiint_V r\,dV=4\int_0^{2\pi}\int_0^\pi\int_0^R r\cdot r^2\sin\theta\,dr\,d\theta\,d\phi=4\pi R^4
+				\]
+			\end{item}
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
