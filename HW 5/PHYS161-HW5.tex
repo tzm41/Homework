@@ -1,0 +1,197 @@
+\documentclass{article}
+
+\input{settings}
+\usetikzlibrary{shapes.geometric, calc}
+%\everymath{\displaystyle}
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newdate{DueDate}{25}{02}{2015} % Due date in {dd}{mm}{yyyy}
+\newcommand{\hmwkTitle}{Homework\ 5} % Assignment title
+\newcommand{\hmwkDueDate}{\dayofweekname{\getdateday{DueDate}}{\getdatemonth{DueDate}}{\getdateyear{DueDate}} \displaydate{DueDate}} % Due date
+\newcommand{\hmwkClass}{PHYS\ 161} % Course/class
+\newcommand{\hmwkClassTime}{11:00am} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Professor Landee} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhuoming Tan} % Your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+\newpage
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+%\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+	(6.10) \textit{Rings with opposite currents}
+
+	Two parallel rings have the same axis and are separated by a small distance $\epsilon$. They have the same radius $a$, and they carry the same current $I$ but in opposite directions. Consider the magnetic field at points on the axis of the rings. The field is zero midway between the rings, because the contributions from the rings cancel. And the field is zero very far away. So it must reach a maximum value at some point in between. Find this point. Work in the approximation where $\epsilon\ll a$.
+	% Question
+
+	\textbf{Solution}
+
+	From the equation for field on axis
+	\begin{equation}\tag{6.53}
+		B_z=\frac{\mu_0Ib^2}{2(b^2+z^2)^{3/2}}
+	\end{equation}
+	the field for this set up on the z axis would be
+	\[
+		B_z=\frac{\mu_0Ia^2}{2}\left(\frac{1}{(a^2+(z-\epsilon/2)^2)^{3/2}}-\frac{1}{(a^2+(z+\epsilon/2)^2)^{3/2}}\right)
+	\]
+	the first order Taylor expansion is
+	\[
+		B_z\approx\frac{\mu_0Ia^2}{2}\frac{3z\epsilon}{\left(a^2+z^2\right)^{5/2}}
+	\]
+	Now let constant $k=\frac{\mu_0Ia^2}{2}$,
+	\[
+		\frac{B_z}{k}=\frac{3z\epsilon}{\left(a^2+z^2\right)^{5/2}}
+	\]
+	So take derivative,
+	\[
+		\frac{d}{dz}\frac{B_z}{k}=\frac{3\epsilon\left(a^2-4z^2\right)}{\left(a^2+z^2\right)^{7/2}}
+	\]
+	and let it equals zero. It yields that $z=a/2$. Put this result into the equation, the maximum value is:
+	\[
+		\frac{24\epsilon\mu_0I}{25\sqrt{5}a^2}
+	\]
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(6.44) \textit{Line integral along the axis}
+
+	Consider the magnetic field of a circular current ring, at points on the axis of the ring, given by Eq.~(6.53). Calculate explicitly the line integral of the field along the axis from $-\infty$ to $\infty$, to check the general formula
+	\begin{equation}\tag{6.97}
+		\int\mathbf{B}\cdot d\mathbf{s}=\mu_0I
+	\end{equation}
+	Why may we ignore the ``return'' part of the path which would be necessary to complete a closed loop?
+	% Question
+
+	\textbf{Solution}
+
+	Let us mention the equation
+	\begin{equation}\tag{6.53}
+		B_z=\frac{\mu_0Ib^2}{2(b^2+z^2)^{3/2}}
+	\end{equation}
+	So the integral
+	\[
+		\int\mathbf{B}\cdot d\mathbf{s}=\int_{-\infty}^{\infty}\frac{\mu_0Ib^2}{2(b^2+z^2)^{3/2}}\,dz=\frac{\mu_0I}{2}\int_{-\infty}^{\infty}\frac{b^2}{(b^2+z^2)^{3/2}}\,dz=\left.\frac{\mu_0I}{2}\frac{z}{\sqrt{b^2+z^2}}\right|_{-\infty}^{\infty}=\mu_0I
+	\]
+	This integral goes from $-\infty$ to $\infty$, therefore the return part would be infinitesimally small, which could be ignored.
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(6.54) \textit{Force between a wire and a loop}
+	
+	Figure~6.47 shows a horizontal infinite straight wire with current $I_1$ pointing into the page, passing a height $z$ above a square horizontal loop with side length $l$ and current $I_2$... (problem omitted)
+	% Question
+
+	\textbf{Solution}
+
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\draw (-2,0) -- (2,0);
+			\draw (-1.8,1) -- (1.8,1);
+			\draw (-1.8,1) -- (-2,0);
+			\draw (1.8,1) -- (2,0);
+			\draw[dashed] (0,0.5) -- (0,5) node[midway, left] {$z$};
+			\fill (0,5) circle[radius=0.1];
+		\end{tikzpicture}
+	\end{figure}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(3.9) Grounding a shell... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		Even if the outer shell is grounded, because from Gauss's Law, this is the lowest energy configuration, the amount of charge would remain $-Q$ on the outer shell. This could be further explained by taking the Gaussian surface at $R$ within the outer shell, and because the outer shell is a conductor, the field inside the shell must be zero. Therefore $-Q$ charge must reside on the inner surface of the outer shell to make this possible.
+
+		However when the inner shell is grounded, case changes. The potential inside the outer shell due to the outer shell is $V=\frac{-Q}{4\pi\epsilon_0R_2}$, but the inner shell is at $V=0=\frac{-Q}{4\pi\epsilon_0R_2}+\frac{x}{4\pi\epsilon_0R_1}$. The charge on inner shell is then $x=\frac{R_1}{R_2}Q$.
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(3.13) Image charge for a grounded spherical shell... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				Consider only on the $xy$-plane. Potential of one point charge is $\phi=\frac{-q}{4\pi\epsilon_0r}$, where $r=\sqrt{(x-a)^2+y^2}$; the other one is $\phi=\frac{Q}{4\pi\epsilon_0R}$, where $R=\sqrt{(x-A)^2+y^2}$. So if $\phi=0$,
+				\[
+					\frac{q}{\sqrt{(x-a)^2+y^2}}=\frac{Q}{\sqrt{(x-A)^2+y^2}}
+				\]
+				which could be rewritten as
+				\[
+					\left(x-\frac{Q^2a-q^2A}{Q^2-q^2}\right)^2+y^2=\left(\frac{Q^2a-q^2A}{Q^2-q^2}\right)^2+\frac{q^2A^2-Q^2a^2}{Q^2-q^2}
+				\]
+				which is indeed a circle in the $xy$-plane. Hence it could also be shown as a sphere in space by adding $z$ axis into the equations.
+			\end{item}
+			\item As shown above the $x$ of center is $\frac{Qa-qA}{Q-q}$. Let that equal zero. $Q^2a=q^2A$.
+			\item It would be $R=\sqrt{\frac{qA^2-Qa^2}{Q-q}}=\sqrt{Aa}$.
+			\item From $R=\sqrt{Aa}$, $a=R^2/a$. From $Q^2a=q^2A$, $q=QR/A$.
+			\item Same logic as the previous question.
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(3.59) Coaxial capacitor... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		By Gauss's Law
+		\[
+			E=\frac{\lambda}{2\pi\epsilon_0r}
+		\]
+		so
+		\[
+			\Delta V=\int_a^bE\,dr=\frac{\lambda}{2\pi\epsilon_0}\ln\frac{a}{b}
+		\]
+		so for a length $L$, $Q=\lambda L$
+		\[
+			C=\frac{Q}{\Delta V}=\frac{2\pi\epsilon_0L}{\ln\frac{a}{b}}
+		\]
+		If $a-b$ is small, $2\pi L$ could be approximated as a flat area $A$. $\ln\frac{a}{b}=\ln a-\ln b\approx a-b=d$. So $C\approx\frac{A\epsilon_0}{d}$.
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

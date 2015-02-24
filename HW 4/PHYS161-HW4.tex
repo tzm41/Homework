@@ -1,0 +1,170 @@
+\documentclass{article}
+
+\input{settings}
+\usetikzlibrary{shapes.geometric, calc}
+%\everymath{\displaystyle}
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newdate{DueDate}{12}{02}{2015} % Due date in {dd}{mm}{yyyy}
+\newcommand{\hmwkTitle}{Homework\ 4} % Assignment title
+\newcommand{\hmwkDueDate}{\dayofweekname{\getdateday{DueDate}}{\getdatemonth{DueDate}}{\getdateyear{DueDate}} \displaydate{DueDate}} % Due date
+\newcommand{\hmwkClass}{PHYS\ 161} % Course/class
+\newcommand{\hmwkClassTime}{11:00am} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Professor Landee} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhuoming Tan} % Your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+\newpage
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+%\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+	(2.34) Extremum of $\phi$... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		For point charge $\phi=\frac{Q}{4\pi\epsilon_0r}$. For the line $(0,y,0)$, superposition of contribution from each point charge is then
+		\[
+			\phi(0,y,0)=2\frac{-C}{4\pi\epsilon_0\sqrt{1+(1-y)^2}}+\frac{2C}{4\pi\epsilon_0\sqrt{y^2}}=\frac{2C}{4\pi\epsilon_0}\left(\frac{1}{\sqrt{y^2}}-\frac{1}{\sqrt{1+(1-y)^2}}\right)
+		\]
+		so take derivative respect to y
+		\[
+			\phi'(0,y,0)=\frac{2C}{4\pi\epsilon_0}\left(\frac{y-1}{\left(y^2-2 y+2\right)^{3/2}}-\frac{y}{\left(y^2\right)^{3/2}}\right)
+		\]
+		Let $\phi'(0,y,0)=0$, and compute numeric root with computer. $y\approx1.62072$. Calculating value of $\phi'(0,y,0)$ besides this point could reveal that $y\approx1.62072$ is a minimum of $\phi$.
+
+		Because $\mathbf{E}=-\nabla\phi$, at minimum or maximum of $\phi$, $\mathbf{E}=0$.
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(2.50) Dividing the charge... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		For one of the spheres with charge $q$, the electric field $E=\frac{q}{4\pi\epsilon_0r^2}$. When $r<R$, $u=0$; when $r>R$,
+		\[
+			u=\frac{\epsilon_0}{2}\int_0^\pi\int_0^{2\pi}\int_{R_1}^\infty E^2\,dV=\frac{q^2}{8\pi\epsilon_0R_1}
+		\]
+		So for the other one with charge $Q-q$, $u=\frac{(Q-q)^2}{8\pi\epsilon_0R_2}$. Derivative of total potential is then
+		\[
+			\frac{q(R_1+R_2)-QR_1}{4\pi\epsilon_0R_1R_2}
+		\]
+		Because their separation is much larger than their radii, let $R_1=R_2$. Then $q=Q/2$. So each of the two spheres have the same charge $Q/2$.
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(2.58) Energy of a shell... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		\begin{equation}\tag{2.32}
+			U=\frac{1}{2}\int\rho\phi\,dv
+		\end{equation}
+		So
+		\[
+			U=\frac{1}{2}\int\rho\phi\,dv=\frac{1}{2}\int_0^{2\pi}\,d\theta\int_0^\pi\frac{Q^2R^2\sin\phi}{16\pi^2\epsilon_0R}\,d\phi=\frac{Q^2}{8\pi\epsilon_0R}
+		\]
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(3.9) Grounding a shell... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		Even if the outer shell is grounded, because from Gauss's Law, this is the lowest energy configuration, the amount of charge would remain $-Q$ on the outer shell. This could be further explained by taking the Gaussian surface at $R$ within the outer shell, and because the outer shell is a conductor, the field inside the shell must be zero. Therefore $-Q$ charge must reside on the inner surface of the outer shell to make this possible.
+
+		However when the inner shell is grounded, case changes. The potential inside the outer shell due to the outer shell is $V=\frac{-Q}{4\pi\epsilon_0R_2}$, but the inner shell is at $V=0=\frac{-Q}{4\pi\epsilon_0R_2}+\frac{x}{4\pi\epsilon_0R_1}$. The charge on inner shell is then $x=\frac{R_1}{R_2}Q$.
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(3.13) Image charge for a grounded spherical shell... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		\begin{enumerate}[label=(\alph*)]
+			\begin{item}
+				Consider only on the $xy$-plane. Potential of one point charge is $\phi=\frac{-q}{4\pi\epsilon_0r}$, where $r=\sqrt{(x-a)^2+y^2}$; the other one is $\phi=\frac{Q}{4\pi\epsilon_0R}$, where $R=\sqrt{(x-A)^2+y^2}$. So if $\phi=0$,
+				\[
+					\frac{q}{\sqrt{(x-a)^2+y^2}}=\frac{Q}{\sqrt{(x-A)^2+y^2}}
+				\]
+				which could be rewritten as
+				\[
+					\left(x-\frac{Q^2a-q^2A}{Q^2-q^2}\right)^2+y^2=\left(\frac{Q^2a-q^2A}{Q^2-q^2}\right)^2+\frac{q^2A^2-Q^2a^2}{Q^2-q^2}
+				\]
+				which is indeed a circle in the $xy$-plane. Hence it could also be shown as a sphere in space by adding $z$ axis into the equations.
+			\end{item}
+			\item As shown above the $x$ of center is $\frac{Qa-qA}{Q-q}$. Let that equal zero. $Q^2a=q^2A$.
+			\item It would be $R=\sqrt{\frac{qA^2-Qa^2}{Q-q}}=\sqrt{Aa}$.
+			\item From $R=\sqrt{Aa}$, $a=R^2/a$. From $Q^2a=q^2A$, $q=QR/A$.
+			\item Same logic as the previous question.
+		\end{enumerate}
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(3.59) Coaxial capacitor... (problem omitted)
+	% Question
+
+	\problemAnswer{
+		By Gauss's Law
+		\[
+			E=\frac{\lambda}{2\pi\epsilon_0r}
+		\]
+		so
+		\[
+			\Delta V=\int_a^bE\,dr=\frac{\lambda}{2\pi\epsilon_0}\ln\frac{a}{b}
+		\]
+		so for a length $L$, $Q=\lambda L$
+		\[
+			C=\frac{Q}{\Delta V}=\frac{2\pi\epsilon_0L}{\ln\frac{a}{b}}
+		\]
+		If $a-b$ is small, $2\pi L$ could be approximated as a flat area $A$. $\ln\frac{a}{b}=\ln a-\ln b\approx a-b=d$. So $C\approx\frac{A\epsilon_0}{d}$.
+	}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
