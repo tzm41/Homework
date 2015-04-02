@@ -1,0 +1,420 @@
+\documentclass{article}
+
+\input{settings}
+\usetikzlibrary{shapes.geometric, calc}
+\DeclareSIUnit\c{\mathit{c}}
+%\everymath{\displaystyle}
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newdate{DueDate}{01}{04}{2015} % Due date in {dd}{mm}{yyyy}
+\newcommand{\hmwkTitle}{Homework\ 8} % Assignment title
+\newcommand{\hmwkDueDate}{\dayofweekname{\getdateday{DueDate}}{\getdatemonth{DueDate}}{\getdateyear{DueDate}} \displaydate{DueDate}} % Due date
+\newcommand{\hmwkClass}{PHYS\ 161} % Course/class
+\newcommand{\hmwkClassTime}{11:00am} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Professor Landee} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Zhuoming Tan} % Your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+\newpage
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+%\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}
+	(6.65) \textit{Proton beam}
+
+	A high-energy accelerator produces a beam of protons with kinetic energy \SI{2}{\GeV} (that is, \SI{2e9}{\electronvolt} per proton). You may assume that the rest energy of a proton is \SI{1}{\giga\electronvolt}. The current is 1 milliamp, and the beam diameter is \SI{2}{\mm}. As measured in the laboratory frame:
+	\begin{enumerate}[label = (\alph*)]
+		\item What is the strength of the electric field caused by the beam \SI{1}{\cm} from the central axis of the beam?
+		\item What is the strength of the magnetic field at the same distance?
+		\item Now consider a frame $F'$ that is moving along with the protons. What fields would be measured in $F'$?
+	\end{enumerate}
+	% Question
+
+	\textbf{Solution}
+	\begin{enumerate}[label = (\alph*)]
+		\begin{item}
+			$\lambda=I/v$, where $v$ is the proton velocity. For protons with mass \SI{938.2720}{\MeV\per\square\c}:
+			\[
+				K=\left(\gamma-1\right)mc^2=\SI{2}{\giga\electronvolt}\Longrightarrow v=0.9476c
+			\]
+			where $\gamma=\frac{1}{\sqrt{1-v^2/c^2}}=3.13158$. So
+			\[
+				\lambda=\frac{\SI{1e-3}{\ampere}}{0.9476\times\SI{299792458}{\m\per\s}}=\SI{3.5199e-12}{\coulomb\per\m}
+			\]
+			So the electric field is
+			\[
+				E=\frac{\lambda}{2\pi\epsilon_0r}=\frac{\SI{3.5199e-12}{\coulomb\per\m}}{2\pi\epsilon_0\times\SI{0.01}{\m}}=\SI{6.32711}{\newton\per\coulomb}
+			\]
+		\end{item}
+		\begin{item}
+			\[
+				B=\frac{\mu_0I}{2\pi r}=\frac{\mu_0\times\SI{1e-3}{\ampere}}{2\pi\times\SI{0.01}{\m}}=\SI{2e-8}{\tesla}
+			\]
+		\end{item}
+		\begin{item}
+			In this frame $B=0$, since the protons are stationary. The linear density is
+			\[
+				\lambda_0=\lambda/\gamma=\SI{1.12401e-12}{\coulomb\per\m}
+			\]
+			The electric field is
+			\[
+				E=\frac{\lambda_0}{2\pi\epsilon_0r}=\SI{2.02042}{\newton\per\coulomb}
+			\]
+		\end{item}
+	\end{enumerate}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(6.66) \textit{Fields in a new frame}
+
+	In the neighborhood of the origin in the coordinate system $x$, $y$, $z$, there is an electric field $\mathbf{E}$ of magnitude \SI{100}{\volt\per\m}, pointing in a direction that makes angles of \ang{30} with the $x$ axis, \ang{60} with the $y$ axis. The frame $F'$ has its axes parallel to those just described, but is moving, relative to the first frame, with a speed $0.6c$ in the positive $y$ direction. Find the direction and magnitude of the electric field that will be reported by an observer in the frame $F'$. What magnetic field does this observer report?
+	% Question
+
+	\textbf{Solution}
+
+	Seemingly the $\mathbf{E}$ field is in the $xy$-plane. So in the $F$ frame
+	\[
+		E_x=\frac{\sqrt{3}}{2}E,\quad E_y=\frac{1}{2}E
+	\]
+	Therefore in the $F'$ frame, where $\gamma=\frac{1}{\sqrt{1-v^2/c^2}}=1.25$:
+	\[
+		{B_z}'=-\gamma\frac{v}{c^2}E_x=-1.25\times\frac{0.6c}{c^2}\frac{\sqrt{3}}{2}E=\SI{-2.1666e-7}{\tesla}
+	\]
+	and the other components are zero.
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(6.68) \textit{Force on electrons moving together}
+	
+	Consider two electrons in a cathode ray tube that are moving on parallel paths, side by side, at the same speed $v$. The distance between them, a distance measured at right angles to their velocity, is $r$. What is the force that acts on one of them, owing to the presence of the other, as observed in the laboratory frame? If $v$ were very small compared with $c$, you could answer $e^2/4\pi\epsilon_0r^2$ and let it go at that. But $v$ isn't small, so you have to be careful\ldots (problem omitted)
+	% Question
+
+	\textbf{Solution}
+	\begin{enumerate}[label = (\alph*)]
+		\begin{item}
+			The first idea to do this would be to look at the system in the $F$ frame where the electrons are stationary, whose $\gamma=\frac{1}{\sqrt{1-v^2/c^2}}$. Then $E=e^2/4\pi\epsilon_0r^2$, since $r$ is perpendicular to the direction of relative motion and does not change. Therefore using the transformation between the frames
+			\[
+				{F_\perp}'=\gamma F_\perp=\frac{e^2}{\gamma4\pi\epsilon_0r^2}=\frac{e^2}{4\sqrt{1-v^2/c^2}\pi\epsilon_0r^2}
+			\]
+			pointing downward.
+		\end{item}
+		\begin{item}
+			So the field of the moving charge is
+			\[
+				E'=\frac{e}{4\pi\epsilon_0{r'}^2}\frac{1-\beta^2}{{\left(1-\beta^2\sin^2\theta'\right)}^{3/2}}
+			\]
+			For the charge $e$ at each instance when they are always at $\theta'=\pi/2$, the force downwards is
+			\[
+				F'=\frac{e^2}{4\pi\epsilon_0r^2}\frac{1}{{\left(1-\beta^2\right)}^{1/2}}=\frac{e^2}{\gamma4\pi\epsilon_0r^2}=\frac{e^2}{4\sqrt{1-v^2/c^2}\pi\epsilon_0r^2}
+			\]
+			Magnetic field
+			\[
+				{B_\perp}'=-\gamma\frac{v}{c^2}E_\perp
+			\]
+			\[
+				{F_B}'=qv\times{B_\perp}'=qv\gamma\frac{v}{c^2}E_\perp
+			\]
+			which is pointing upward. The net force
+			\[
+				F_\mathrm{net}=eE_\perp/\gamma
+			\]
+		\end{item}
+		\item The denominator goes to zero, so the force goes to infinity.
+	\end{enumerate}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(7.3) \textit{Pulling a square frame}
+
+	A square wire frame with side length $l$ has total resistance $R$. It is being pulled with speed $v$ out of a region where there is a uniform $\mathbf{B}$ field pointing out of the page (the shaded area in Fig.~7.28). Consider the moment when the left corner is a distance $x$ inside the shaded area.
+	\begin{enumerate}[label = (\alph*)]
+		\item What force do you need to apply to the square so that it moves with constant speed $v$?
+		\item Verify that the work you do from $x=x_0$ (which you can assume is less than $l/\sqrt{2}$) down to $x=0$ equals the energy dissipated in the resistor.
+	\end{enumerate}
+	% Question
+
+	\textbf{Solution}
+	\begin{enumerate}[label = (\alph*)]
+		\begin{item}
+			According to Faraday's Law EMF
+			\[
+				V=-\frac{d\Phi}{dt}=-B\frac{dA}{dt}
+			\]
+			The area of the frame in the magnetic field is $\frac{1}{2}{\left(\sqrt{2}x\right)}^2=x^2$. $dx/dt=v$, so $dA/dt=dx^2/dt=2x\cdot dx/dt=2xv$. So $V=-2Bxv$.
+
+			The rate of energy dissipated by the frame is $P=I^2R=VI=V^2/R=4B^2x^2v^2/R$. To have conservation of kinetic energy
+			\[
+				P=Fv=4B^2x^2v^2/R\Longrightarrow F=4B^2x^2v/R
+			\]
+		\end{item}
+		\begin{item}
+			The work done by the force is
+			\[
+				W=\int F\,dx=\int_{x_0}^0 4B^2x^2v/R\,dx=-\frac{4B^2{x_0}^3v}{3R}
+			\]
+			and the time for the frame to travel $x_0$ is $x_0/v$, where at $t$, $P=4B^2{(x_0-vt)}^2v^2/R$. So the energy dissipated in the resistor is
+			\[
+				W=\int P\,dt=\int_0^{x_0/v}4B^2{(x_0-vt)}^2v^2/R\,dt=\frac{4B^2{x_0}^3v}{3R}
+			\]
+			So the work done is equal to the energy dissipated.
+		\end{item}
+	\end{enumerate}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(7.6) \textit{Growing current in a solenoid}
+
+	An infinite solenoid has radius $R$ and $n$ turns per unit length. The current grows linearly with time, according to $I(t)=Ct$. Use the integral form of Faraday's law to find the electric field at radius $r$, both inside and outside the solenoid. Then verify that your answers satisfy the differential form of the law.
+	% Question
+
+	\textbf{Solution}
+
+	The field inside the solenoid is given by
+	\[
+		B(t)=\mu_0 n I(t)
+	\]
+	So the magnetic flux $\Phi_B=Ba=\pi r^2B=n\pi r^2\mu_0Ct$. The integral form of Faraday's law is
+	\[
+		\oint\mathbf{E}\cdot d\mathbf{l}=-\frac{d}{dt}\int\mathbf{B}\cdot d\mathbf{a}
+	\]
+	therefore
+	\[
+		2\pi rE_\theta=\frac{d\Phi_B}{dt}\Longrightarrow E_\theta=\frac{\mu_0 nCr}{2}
+	\]
+	Outside the solenoid, the flux is ${\Phi_B}'=Ba'=\pi R^2B=n\pi R^2\mu_0Ct$. Therefore
+	\[
+		2\pi r{E_\theta}'=\frac{d{\Phi_B}'}{dt}\Longrightarrow {E_\theta}'=\frac{\mu_0 nCR^2}{2r}
+	\]
+	To check with the differential form of Faraday's law
+	\[
+		\nabla\times\mathbf{E}=-\frac{\partial\mathbf{B}}{\partial t}
+	\]
+	where in cylindrical coordinates
+	\[
+		\nabla\times\mathbf{E}=\left({\frac{1}{r}}{\frac{\partial E_{z}}{\partial\theta}}-{\frac{\partial E_{\theta}}{\partial z}}\right){\mathbf{{\hat{r}}}}+\left({\frac{\partial E_r}{\partial z}}-{\frac{\partial E_z}{\partial r}}\right){\boldsymbol{{\hat{\theta}}}}+{\frac{1}{r}}\left({\frac{\partial\left(r E_{\theta}\right)}{\partial r}}-{\frac{\partial E_r}{\partial\theta}}\right){\mathbf{\hat{z}}}
+	\]
+	and only $E_\theta$ is not zero. Inside:
+	\[
+		\nabla\times\mathbf{E}=\frac{1}{r}{\frac{\partial\left(r E_{\theta}\right)}{\partial r}}{\mathbf{\hat{z}}}=-\mu_0nC{\mathbf{\hat{z}}}
+	\]
+	Confirms with $-\frac{\partial\mathbf{B}}{\partial t}=-\mu_0nC{\mathbf{\hat{z}}}$. Outside:
+	\[
+		\nabla\times\mathbf{E}=0
+	\]
+	which also confirms with $\frac{\partial\mathbf{B}}{\partial t}$ since $\mathbf{B}$ outside is zero.
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(7.26) \textit{Sliding bar}
+
+	A metal crossbar of mass $m$ slides without friction on two long parallel conducting rails a distance $b$ apart; see Fig.~7.35. A resistor $R$ is connected across the rails at one end; compared with $R$, the resistance of bar and rails is negligible. There is a uniform field $B$ perpendicular to the plane of the figure. At time $t=0$ the crossbar is given a velocity $v_0$ toward the right. What happens afterward?
+	\begin{enumerate}[label = (\alph*)]
+		\item Does the rod ever stop moving? If so, when?
+		\item How far does it go?
+		\item How about conservation of energy?
+	\end{enumerate}
+	% Question
+
+	\textbf{Solution}
+	\begin{enumerate}[label = (\alph*)]
+		\begin{item}
+			No. Because it could only stop when all its initial kinetic energy is dissipated by the resistor, but the slower it moves the slower its energy gets dissipated. $F=IbB$. Rate of change of area $dA/dt=vb$. So
+			\[
+				V=-\frac{d\Phi_B}{dt}=-B\frac{dA}{dt}=-Bvb
+			\]
+			So the current
+			\[
+				I=V/R=-Bvb/R
+			\]
+			So the force acting on the bar is
+			\[
+				F=-\frac{B^2b^2v}{R}
+			\]
+			therefore
+			\[
+				\frac{dv}{dt}=-\frac{B^2b^2v}{mR}
+			\]
+			rearrange
+			\[
+				\frac{dv}{v}=-\frac{B^2b^2\,dt}{mR}
+			\]
+			integrate and get
+			\[
+				\ln\left(\frac{v}{v_0}\right)=-\frac{B^2b^2t}{mR}
+			\]
+			So
+			\[
+				v=v_0 e^{-\frac{B^2b^2t}{mR}}
+			\]
+			Seemingly, the time it takes for the bar to reach $v=0$ is infinity.
+		\end{item}
+		\begin{item}
+			Its initial kinetic energy is
+			\[
+				K=\frac{1}{2}m{v_0}^2
+			\]
+			the energy dissipated is
+			\[
+				W=\int F\,dx=K
+			\]
+			So
+			\[
+				\int_0^{x_f}\frac{B^2b^2\,dx}{R\,dt}\,dx=K
+			\]
+			Obviously $x$ will have $t$ in its result. Because $t$ goes to infinity, $x$ also is not bounded.
+		\end{item}
+		\item Its kinetic energy is slowly dissipated by the resistor. Energy is conserved.
+	\end{enumerate}
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 7
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(7.27) \textit{Ring in a solenoid}
+
+	An infinite solenoid with radius $b$ has $n$ turns per unit length. The current varies in time according to $I(t)=I_0\cos\omega t$ (with positive defined as shown in Fig.~7.36). A ring with radius $r<b$ and resistance $R$ is centered on the solenoid's axis, with its plane perpendicular to the axis.
+	\begin{enumerate}[label = (\alph*)]
+		\item What is the induced current in the ring?
+		\item A given little piece of the ring will feel a magnetic force. For what values of $t$ is this force maximum?
+		\item What is the effect of the force on the ring? That is, does the force cause the ring to translate, spin, flip over, stretch/shrink, etc.?
+	\end{enumerate}
+	% Question
+
+	\textbf{Solution}
+	\begin{enumerate}[label = (\alph*)]
+		\begin{item}
+			The field inside the solenoid is given by
+			\[
+				B(t)=\mu_0 n I(t)
+			\]
+			So the magnetic flux $\Phi_B=Ba=\pi r^2B=n\pi r^2\mu_0I_0\cos\omega t$. EMF
+			\[
+				V=-\frac{d\Phi_B}{dt}=n\pi r^2\mu_0I_0\omega\sin\omega t
+			\]
+			Induced current
+			\[
+				I=V/R=\frac{n\pi r^2\mu_0I_0\omega\sin\omega t}{R}
+			\]
+		\end{item}
+		\begin{item}
+			Considering a small piece for ring, treated as a straight line $\Delta x$. According to $F=BI\Delta x$,
+			\[
+				F=n\mu_0I_0\cos\omega t\frac{n\pi r^2\mu_0I_0\omega\sin\omega t}{R}\Delta x=\frac{n^2\pi r^2{\mu_0}^2{I_0}^2\omega\cos\omega t\sin\omega t}{R}\Delta x
+			\]
+			Taking derivative
+			\[
+				\omega\cos^2(\omega t)-\omega\sin^2(\omega t)=0
+			\]
+			reveals it has maximum at $t=\frac{\pi+4k\pi}{4\omega}$, $k\in\mathbb{Z}$.
+		\end{item}
+		\begin{item}
+			It causes the ring to strectch when $B$ is decreasing, and shrink when $B$ is increasing.
+		\end{item}
+	\end{enumerate}
+	
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 8
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(7.39) \textit{Small L}
+
+	How could we wind a resistance coil so that its self-inductance would be \textit{small}?
+	% Question
+
+	\textbf{Solution}
+
+	Possibly should wrap two wires, with opposite current directions first, before winding the wire onto the coil. This is called bifilar coil.
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 9
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(7.43) \textit{Energy in an RL circuit}
+
+	Consider the \textit{RL} circuit discussed in Section 7.9. Show that the energy delivered by the battery up to an arbitrary time $t$ equals the energy stored in the magnetic field plus the energy dissipated in the resistor. Do this by using the expression for $I(t)$ in Eq.~(7.69) and explicitly calculating the relevant integrals. This method is rather tedious, so feel free to use a computer to evaluate the integrals. See Problem 7.15 for a much quicker method.
+	% Question
+
+	\textbf{Solution}
+	\begin{equation}\tag{7.69}
+		I(t)=\frac{\mathcal{E}_0}{R}{\left(1-e^{-(R/L)t}\right)}
+	\end{equation}
+	Energy dissipated in the resistor
+	\[
+		W_R=\int_0^t {I(t')}^2R\,dt'=\frac{{\mathcal{E}_0}^2 \left(L e^{-\frac{2 R t}{L}} \left(4 e^{\frac{R t}{L}}-1\right)-3 L+2 R t\right)}{2 R^2}
+	\]
+	Energy stored in the magnetic field
+	\[
+		U_B=\frac{1}{2}L{I(t)}^2=\frac{1}{2}L{\left(\frac{\mathcal{E}_0}{R}{\left(1-e^{-(R/L)t}\right)}\right)}^2
+	\]
+	Energy provided by the battery
+	\[
+		W_B=\int_0^t P\,dt=\int_0^t \mathcal{E}_0I(t')\,dt'=\frac{{\mathcal{E}_0}^2 \left(L \left(e^{-\frac{R t}{L}}-1\right)+R t\right)}{R^2}
+	\]
+	Although not too straightforward, it is anticipated that $W_R+U_B=W_B$.
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 10
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}
+	(7.47) \textit{A dynamo}
+
+	In this question the term \textit{dynamo} will be used for a generator that works in the following way. By some external agency \textendash\ the shaft of a steam turbine, for instance \textendash\ a conductor is driven through a magnetic field, inducing an electromotive force in a circuit of which that conductor is part. The source of the magnetic field is the current that is caused to flow in that circuit by that electromotive force. An electrical engineer would call it a self-excited dc generator. One of the simplest dynamos conceivable is sketched in Fig.~7.43. It has only two essential parts. One part is a solid metal disk and axle which can be driven in rotation. The other is a two-turn ``coil'' which is stationary but is connected by sliding contacts, or ``brushes,'' to the axle and to the rim of the revolving disk. One of the two devices pictured is, at least potentially, a dynamo. The other is not. Which is the dynamo?
+
+	Note that the answer to this question cannot depend on any convention about handedness or current directions. An intelligent extraterrestrial being inspecting the sketches could give the answer, provided only that it knows about arrows! What do you think determines the direction of the current in such a dynamo? What will determine the magnitude of the current?
+	% Question
+
+	\textbf{Solution}
+
+	It has to be second one. When assuming either directions of the current in the first one, the induced current would produce the opposite magnetic field, thus stopping the dynamo and waste all the energy.
+\end{homeworkProblem}
+%----------------------------------------------------------------------------------------
+
+\end{document}

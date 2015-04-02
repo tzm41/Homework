@@ -1,0 +1,508 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15745,        498]
+NotebookOptionsPosition[     13934,        428]
+NotebookOutlinePosition[     14289,        444]
+CellTagsIndexPosition[     14246,        441]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"1", "/", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"v", "^", "2"}], ")"}], "/", 
+           RowBox[{"(", 
+            RowBox[{"c", "^", "2"}], ")"}]}]}], "]"}]}], "-", "1"}], ")"}], 
+     "*", "938.272046*^6"}], "\[Equal]", "2*^9"}], ",", "v"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.636735007510611*^9, 3.636735087606307*^9}, 
+   3.636735128648349*^9, {3.636735238948613*^9, 3.636735253379051*^9}, 
+   3.636735334648459*^9, {3.636735803040317*^9, 3.636735803590275*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Reduce", "::", "ratnz"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Reduce was unable to solve the system with inexact \
+coefficients. The answer was obtained by solving a corresponding exact system \
+and numericizing the result. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Reduce/ratnz\\\", ButtonNote -> \
+\\\"Reduce::ratnz\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.636735253807599*^9, 3.636735335175704*^9, 
+  3.6367358043491383`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"c", "\[NotEqual]", "0"}], "&&", 
+    RowBox[{"v", "\[Equal]", 
+     RowBox[{
+      RowBox[{"-", "0.9476443082193902`"}], " ", "c"}]}]}], ")"}], "||", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"c", "\[NotEqual]", "0"}], "&&", 
+    RowBox[{"v", "\[Equal]", 
+     RowBox[{"0.9476443082193902`", " ", "c"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.636735076586483*^9, 3.636735088052203*^9}, {
+   3.63673524495818*^9, 3.63673525381605*^9}, 3.6367353351813803`*^9, 
+   3.636735804353861*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1*^-3", "/", 
+  RowBox[{"(", 
+   RowBox[{"0.9476443082193902`", " ", "299792458"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.636736021493588*^9, 3.636736035932983*^9}}],
+
+Cell[BoxData["3.519929284700861`*^-12"], "Output",
+ CellChangeTimes->{3.636736036943946*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", "3.519929284700861`*^-12", ")"}], "/", 
+  RowBox[{"(", 
+   RowBox[{"2", "\[Pi]", " ", 
+    RowBox[{"Quantity", "[", "\"\<VacuumPermittivity\>\"", "]"}], " ", "*", 
+    "0.01"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6367370417049723`*^9, 3.6367370573110857`*^9}, {
+   3.636737183243875*^9, 3.6367371844498453`*^9}, 3.636737276412591*^9, {
+   3.636737339432267*^9, 3.636737346093234*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"5.602141449940614`*^-11"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{"\"/\"", "\[InvisibleSpace]", 
+          SubscriptBox["\"\[CurlyEpsilon]\"", "0"]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: reciprocal electric constants"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["1", "\"ElectricConstant\""]}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.636737346690894*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{"5.602141449940614`*^-11"},
+    "QuantityUnit",
+    DisplayFunction->(TooltipBox[
+      StyleBox[
+       RowBox[{#, "\[InvisibleSpace]", 
+         StyleBox[
+          RowBox[{"\"/\"", "\[InvisibleSpace]", 
+            SubscriptBox["\"\[CurlyEpsilon]\"", "0"]}], 
+          "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+      "Unit: reciprocal electric constants"]& ),
+    InterpretationFunction->(RowBox[{"Quantity", "[", 
+       RowBox[{#, ",", 
+         FractionBox["1", "\"ElectricConstant\""]}], "]"}]& )], ",", 
+   "\"\<SI\>\""}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{"6.327109346824562`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          
+          RowBox[{"\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+            "\"F\""}]}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: meters per farad"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["\"Meters\"", "\"Farads\""]}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.636737352054448*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityMagnitude", "[", 
+  TemplateBox[{"6.327109346824562`"},
+   "QuantityUnit",
+   DisplayFunction->(TooltipBox[
+     StyleBox[
+      RowBox[{#, "\[InvisibleSpace]", 
+        StyleBox[
+         RowBox[{" ", 
+           
+           RowBox[{"\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]",
+              "\"F\""}]}], "QuantityUnitTraditionalLabel"]}], 
+      ShowStringCharacters -> False], "Unit: meters per farad"]& ),
+   InterpretationFunction->(RowBox[{"Quantity", "[", 
+      RowBox[{#, ",", 
+        FractionBox["\"Meters\"", "\"Farads\""]}], "]"}]& )], "]"}]], "Input",\
+
+ NumberMarks->False],
+
+Cell[BoxData["6.327109346824562`"], "Output",
+ CellChangeTimes->{3.6367373709112873`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", "\"\<VacuumPermeability\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.636737321486218*^9, 3.636737324424614*^9}, {
+  3.63673763673846*^9, 3.636737641878687*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"1"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          SubscriptBox["\"\[Mu]\"", "0"]}], "QuantityUnitTraditionalLabel"]}],
+      ShowStringCharacters -> False], "Unit: magnetic constants"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"MagneticConstant\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.636737325770156*^9, 3.636737644142002*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityMagnitude", "[", 
+  TemplateBox[{"1"},
+   "QuantityUnit",
+   DisplayFunction->(TooltipBox[
+     StyleBox[
+      RowBox[{#, "\[InvisibleSpace]", 
+        StyleBox[
+         RowBox[{" ", 
+           SubscriptBox["\"\[CurlyEpsilon]\"", "0"]}], 
+         "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+     "Unit: electric constants"]& ),
+   InterpretationFunction->(RowBox[{"Quantity", "[", 
+      RowBox[{#, ",", "\"ElectricConstant\""}], "]"}]& )], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.63673744571719*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Quantity", "[", "\"\<VacuumPermeability\>\"", "]"}], 
+    RowBox[{"Quantity", "[", 
+     RowBox[{"0.001", ",", "\"\<Ampere\>\""}], "]"}]}], ")"}], "/", 
+  RowBox[{"(", 
+   RowBox[{"2", "\[Pi]", " ", 
+    RowBox[{"Quantity", "[", 
+     RowBox[{"0.01", ",", "\"\<meter\>\""}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.636737649111858*^9, 3.636737724513261*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"0.015915494309189534`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          RowBox[{"\"A\"", "\[ThinSpace]", 
+            SubscriptBox["\"\[Mu]\"", "0"], "\[InvisibleSpace]", "\"/\"", 
+            "\[InvisibleSpace]", "\"m\""}]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: ampere magnetic constants per meter"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox[
+        RowBox[{"\"Amperes\"", " ", "\"MagneticConstant\""}], "\"Meters\""]}],
+      "]"}]& )]], "Output",
+ CellChangeTimes->{{3.636737706211112*^9, 3.6367377255085497`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{"0.015915494309189534`"},
+    "QuantityUnit",
+    DisplayFunction->(TooltipBox[
+      StyleBox[
+       RowBox[{#, "\[InvisibleSpace]", 
+         StyleBox[
+          RowBox[{" ", 
+            RowBox[{"\"A\"", "\[ThinSpace]", 
+              SubscriptBox["\"\[Mu]\"", "0"], "\[InvisibleSpace]", "\"/\"", 
+              "\[InvisibleSpace]", "\"m\""}]}], 
+          "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+      "Unit: ampere magnetic constants per meter"]& ),
+    InterpretationFunction->(RowBox[{"Quantity", "[", 
+       RowBox[{#, ",", 
+         FractionBox[
+          RowBox[{"\"Amperes\"", " ", "\"MagneticConstant\""}], 
+          "\"Meters\""]}], "]"}]& )], ",", "\"\<SI\>\""}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{"20.`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"nT\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: nanoteslas"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Nanoteslas\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.636737728531535*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{"20.`"},
+    "QuantityUnit",
+    DisplayFunction->(TooltipBox[
+      StyleBox[
+       RowBox[{#, "\[InvisibleSpace]", 
+         StyleBox[
+          RowBox[{" ", "\"nT\""}], "QuantityUnitTraditionalLabel"]}], 
+       ShowStringCharacters -> False], "Unit: nanoteslas"]& ),
+    InterpretationFunction->(RowBox[{"Quantity", "[", 
+       RowBox[{#, ",", "\"Nanoteslas\""}], "]"}]& )], ",", "\"\<Tesla\>\""}], 
+  "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{"2.`*^-8"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"T\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: teslas"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Teslas\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.6367377412890453`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Reduce", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"g", "-", "1"}], ")"}], "*", "938.272046*^6"}], "\[Equal]", 
+    "2*^9"}], ",", "g"}], "]"}]], "Input",
+ CellChangeTimes->{{3.636735007510611*^9, 3.636735087606307*^9}, 
+   3.636735128648349*^9, {3.636735238948613*^9, 3.636735253379051*^9}, 
+   3.636735334648459*^9, {3.636735803040317*^9, 3.636735803590275*^9}, {
+   3.6367386560089808`*^9, 3.636738658261161*^9}}],
+
+Cell[BoxData[
+ RowBox[{"g", "\[Equal]", "3.1315779453585044`"}]], "Output",
+ CellChangeTimes->{3.6367386586854897`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"3.519929284700861`*^-12", "/", "3.1315779453585044`"}]], "Input",
+ CellChangeTimes->{{3.63673876688167*^9, 3.6367387701234493`*^9}}],
+
+Cell[BoxData["1.1240113917387733`*^-12"], "Output",
+ CellChangeTimes->{3.636738770626133*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", "1.1240113917387733`*^-12", ")"}], "/", 
+  RowBox[{"(", 
+   RowBox[{"2", "\[Pi]", " ", 
+    RowBox[{"Quantity", "[", "\"\<VacuumPermittivity\>\"", "]"}], " ", "*", 
+    "0.01"}], ")"}]}]], "Input",
+ CellChangeTimes->{3.63673881941321*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"1.7889196908682654`*^-11"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{"\"/\"", "\[InvisibleSpace]", 
+          SubscriptBox["\"\[CurlyEpsilon]\"", "0"]}], 
+        "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+    "Unit: reciprocal electric constants"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["1", "\"ElectricConstant\""]}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.636738820183185*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   TemplateBox[{"1.7889196908682654`*^-11"},
+    "QuantityUnit",
+    DisplayFunction->(TooltipBox[
+      StyleBox[
+       RowBox[{#, "\[InvisibleSpace]", 
+         StyleBox[
+          RowBox[{"\"/\"", "\[InvisibleSpace]", 
+            SubscriptBox["\"\[CurlyEpsilon]\"", "0"]}], 
+          "QuantityUnitTraditionalLabel"]}], ShowStringCharacters -> False], 
+      "Unit: reciprocal electric constants"]& ),
+    InterpretationFunction->(RowBox[{"Quantity", "[", 
+       RowBox[{#, ",", 
+         FractionBox["1", "\"ElectricConstant\""]}], "]"}]& )], ",", 
+   "\"\<SI\>\""}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ TemplateBox[{"2.0204221185688005`"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", 
+          
+          RowBox[{"\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+            "\"F\""}]}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: meters per farad"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", 
+       FractionBox["\"Meters\"", "\"Farads\""]}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.636738823269479*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 651},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 4, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 680, 19, 28, "Input"],
+Cell[1263, 43, 590, 12, 42, "Message"],
+Cell[1856, 57, 555, 15, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2448, 77, 192, 4, 28, "Input"],
+Cell[2643, 83, 92, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2772, 89, 429, 9, 28, "Input"],
+Cell[3204, 100, 589, 14, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3830, 119, 666, 17, 35, "Input"],
+Cell[4499, 138, 598, 15, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5134, 158, 635, 17, 28, "Input"],
+Cell[5772, 177, 89, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5898, 183, 200, 3, 28, "Input"],
+Cell[6101, 188, 509, 12, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6647, 205, 538, 14, 28, "Input"],
+Cell[7188, 221, 69, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7294, 227, 433, 11, 28, "Input"],
+Cell[7730, 240, 759, 18, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8526, 263, 817, 20, 28, "Input"],
+Cell[9346, 285, 443, 11, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9826, 301, 516, 14, 28, "Input"],
+Cell[10345, 317, 439, 11, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10821, 333, 473, 11, 28, "Input"],
+Cell[11297, 346, 119, 2, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11453, 353, 156, 2, 28, "Input"],
+Cell[11612, 357, 93, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11742, 363, 277, 7, 28, "Input"],
+Cell[12022, 372, 590, 14, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12649, 391, 667, 17, 35, "Input"],
+Cell[13319, 410, 599, 15, 62, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
