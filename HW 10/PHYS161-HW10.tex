@@ -8,8 +8,8 @@
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
 
-\newdate{DueDate}{15}{04}{2015} % Due date in {dd}{mm}{yyyy}
-\newcommand{\hmwkTitle}{Homework\ 9} % Assignment title
+\newdate{DueDate}{22}{04}{2015} % Due date in {dd}{mm}{yyyy}
+\newcommand{\hmwkTitle}{Homework\ 10} % Assignment title
 \newcommand{\hmwkDueDate}{\dayofweekname{\getdateday{DueDate}}{\getdatemonth{DueDate}}{\getdateyear{DueDate}} \displaydate{DueDate}} % Due date
 \newcommand{\hmwkClass}{PHYS\ 161} % Course/class
 \newcommand{\hmwkClassTime}{11:00am} % Class/lecture time
@@ -39,21 +39,27 @@
 % To have just one problem per page, simply put a \clearpage after each problem
 
 \begin{homeworkProblem}
-	(9.1) \textit{The missing term}
-
-	Due to the contradiction between Eqs.~(9.2) and (9.5), we know that there must be an extra term in the $\nabla\times\mathbf{B}$ relation, as we found in Eq.~(9.10). Call this term $\mathbf{W}$. In the text, we used the Lorentz transformations to motivate a guess for $\mathbf{W}$. Find $\mathbf{W}$ here by taking the divergence of both sides of $\nabla\times\mathbf{B}=\mu_0\mathbf{J}+\mathbf{W}$. Assume that the only facts you are allowed to work with are (1) $\nabla\cdot\mathbf{E}=\rho/\epsilon_0$, (2) $\nabla\cdot\mathbf{B}=0$, (3) $\nabla\cdot\mathbf{J}=-\partial\rho/\partial t$, and (4) $\nabla\times\mathbf{B}=\mu_0\mathbf{J}$ in the case of steady currents.
+	(10.2) \textit{Force on a dielectric}\ldots (problem omitted)
 	% Question
 
 	\textbf{Solution}
-	\begin{align*}
-		\nabla\times\mathbf{B}&=\mu_0\mathbf{J}+\mathbf{W} \\
-		\nabla\cdot\left(\nabla\times\mathbf{B}\right)&=\nabla\cdot\left(\mu_0\mathbf{J}+\mathbf{W}\right) \\
-		0&=\mu_0\nabla\cdot\mathbf{J}+\nabla\cdot\mathbf{W} \\
-		\nabla\cdot\mathbf{W}&=-\mu_0\nabla\cdot\mathbf{J} \\
-		\nabla\cdot\mathbf{W}&=\mu_0\frac{\partial\rho}{\partial t} \\
-		\nabla\cdot\mathbf{W}&=\mu_0\epsilon_0\frac{\partial}{\partial t}\nabla\cdot\mathbf{E} \\
-		\mathbf{W}&=\mu_0\epsilon_0\frac{\partial}{\partial t}\mathbf{E} \\
-	\end{align*}
+	\begin{enumerate}[label = (\alph*)]
+		\begin{item}
+			\[
+				C=C_1+C_2=\frac{\epsilon_0a(b+x\chi_e)}{s}
+			\]
+			So stored energy
+			\[
+				U=\frac{Q^2}{2C}=\frac{Q^2s}{2\epsilon_0a(b+x\chi_e)}
+			\]
+		\end{item}
+		\begin{item}
+			\[
+				F=-\frac{dU}{dx}=\frac{Q^2s\chi_e}{2\epsilon_0a{(b+x\chi_e)}^2}
+			\]
+			And $U$ decreases as $x$ increases, so the force pulls the dielectric in.
+		\end{item}
+	\end{enumerate}
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -61,67 +67,20 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.3) \textit{A charge and a half-infinite wire}
-
-	A half-infinite wire carries current $I$ from negative infinity to the origin, where it builds up at a point charge with increasing $q$ (so $dq/dt=I$). Consider the circle shown in Fig.~\ref{fig:wire}, which has radius $b$ and subtends an angle $2\theta$ with respect to the charge. Calculate the integral $\int\mathbf{B}\cdot d\mathbf{s}$ around this circle. Do this in three ways.
-	\begin{figure}[H]
-		\centering
-		\begin{tikzpicture}
-			\draw (0, 0) ellipse (0.2 and 1.5);
-			\draw[dashed] (-2.5, 0) -- (0, 0);
-			\draw[dashed] (-2.5, 0) -- (0, 1.5);
-			\draw[dashed] (-2.5, 0) -- (0, -1.5);
-			\draw[dashed] (0, 0) -- (0, 1.5) node[midway, right, fill = white] {$b$};
-			\fill (-2.5, 0) circle[radius = 0.1] node[above] {$q$};
-			\draw (-4.5, 0) -- (-2.5, 0);
-			\draw[-latex] (-4, 0.2) -- (-3, 0.2) node[midway, above] {$I$};
-			\node[anchor = south west] at (-2, 0) {$\theta$};
-			\node[anchor = north west] at (-2, 0) {$\theta$};
-		\end{tikzpicture}
-		\caption{}\label{fig:wire}
-	\end{figure}
-	\begin{enumerate}[label= (\alph*)]
-		\item Find the $\mathbf{B}$ field at a given point on the circle by using the Biot-Savart law to add up the contributions from the different parts of the wire.
-		\begin{item}
-			Use the integrated form of Maxwell's equation (that is, the generalized form of Amp\`{e}re's law including the displacement current),
-			\begin{equation}\tag{9.59}
-				\int_C\mathbf{B}\cdot d\mathbf{s}=\mu_0 I+\mu_0\epsilon_0\int_S\frac{\partial\mathbf{E}}{\partial t}\cdot d\mathbf{a}
-			\end{equation}
-			with $S$ chosen to be a surface that is bounded by the circle and doesn't intersect the wire, but is otherwise arbitrary. (You can invoke the result from Problem 1.15.)
-		\end{item}
-		\item Use the same strategy as in (b), but now let $S$ intersect the wire.
-	\end{enumerate}
+	(10.8) \textit{Force from an induced dipole}\ldots (problem omitted)
 	% Question
 
 	\textbf{Solution}
-	\begin{enumerate}[label= (\alph*)]
-		\begin{item}
-			For a point $P$ on the circle, let the angle between verticle direction and the line connecting $P$ and points on the wire be $\phi$. By BSL
-			\[
-				B=\frac{\mu_0I}{4\pi}\int_\theta^{\pi/2}\frac{\cos\phi}{r^2}\,dl=\frac{\mu_0I}{4\pi b}(1-\cos\theta)
-			\]
-			tangential to the circle. So
-			\[
-				\int_C\mathbf{B}\cdot d\mathbf{s}=2\pi b\frac{\mu_0I}{4\pi b}(1-\cos\theta)=\frac{\mu_0I}{2}(1-\cos\theta)
-			\]
-		\end{item}
-		\begin{item}
-			$\mu_0I=0$ becuase the surface chosen does not intersect with the wire. From Problem 1.15, flux of field through the circle is
-			\[
-				\Phi_E=\frac{q}{2\epsilon_0}(1-\cos\theta)
-			\]
-			so
-			\[
-				\mu_0\epsilon_0\int_S\frac{\partial\mathbf{E}}{\partial t}\cdot d\mathbf{a}=\mu_0\epsilon_0\frac{\partial}{\partial t}\int_S\mathbf{E}\cdot d\mathbf{a}=\mu_0\epsilon_0\frac{\partial\Phi_E}{\partial t}=\frac{\mu_0I}{2}(1-\cos\theta)
-			\]
-		\end{item}
-		\begin{item}
-			Include $\mu_0I$ now. Consider a cone-like shape that encloses the charge. The base would be the surface examined in part (b), and the side will be the one we are about to look at right now. ${\Phi_E}'=q/\epsilon_0-\Phi_E$. So
-			\[
-				\mu_0I+\mu_0\epsilon_0\int_S\frac{\partial\mathbf{E}}{\partial t}\cdot d\mathbf{a}=\mu_0I+\mu_0\epsilon_0\frac{\partial{\Phi_E}'}{\partial t}=\frac{\mu_0I}{2}(1-\cos\theta)
-			\]
-		\end{item}
-	\end{enumerate}
+
+	For a charge $q$, its electric field will be $E=\frac{q}{4\pi\epsilon_0r^2}$. The induced dipole moment of the atom will be $p=\alpha E$, which points from the ion to the atom. The field at the ion due to the atom will be $\frac{2p}{4\pi\epsilon_0r^3}$. So force
+	\[
+		F=\frac{2pq}{4\pi\epsilon_0r^3}=\frac{2\alpha q^2}{{(4\pi\epsilon_0)}^2r^5}
+	\]
+	which would be attractive force. The potential
+	\[
+		U=-\int_\infty^r F\,dr'=-\frac{\alpha q^2}{2{(4\pi\epsilon_0)}^2r^4}
+	\]
+	From this equation one could solve for $r$ for the potential at \SI{4e-21}{\joule}, which would be \SI{9.4e-10}{\m}.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -129,48 +88,14 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.5) \textit{Maxwell's equations for a moving charge}\ldots (problem omitted)
+	(10.12) \textit{Boundary conditions on $D$}\ldots (problem omitted)
 	% Question
 
 	\textbf{Solution}
-	\begin{equation}\tag{5.13}
-		E'=\frac{Q}{4\pi\epsilon_0{r'}^2}\frac{1-\beta^2}{{(1-\beta^2\sin^2\theta')}^{3/2}}
-	\end{equation}
-	\begin{enumerate}[label = (\alph*)]
-		\begin{item}
-			So
-			\begin{align*}
-				\nabla\cdot\mathbf{B}&=\frac{1}{c^2}\nabla\cdot(\mathbf{v}\times\mathbf{E}) \\
-				&=\frac{1}{c^2}\left[\mathbf{E}\cdot(\nabla\times\mathbf{v})-\mathbf{v}\cdot(\nabla\times\mathbf{E})\right]
-			\end{align*}
-			And $\nabla\times\mathbf{v}=0$ because $\mathbf{v}$ is constant. $\nabla\times\mathbf{E}$ is perpendicular to $\mathbf{v}$, making their dot products zero as well. So $\nabla\cdot\mathbf{B}=0$.
-		\end{item}
-		\begin{item}
-			From 5.13, with
-			\[
-				D={(\gamma x)}^2+y^2+z^2
-			\]
-			the field becomes
-			\[
-				\mathbf{E}=\frac{\gamma Q}{4\pi\epsilon_0D^{3/2}}(x,y,z)
-			\]
-			So
-			\[
-				{(\nabla\times\mathbf{E})}_y=\frac{\gamma Q}{4\pi\epsilon_0}\left(\frac{-3xz}{D^{5/2}}+\frac{3\gamma^2xz}{D^{5/2}}\right)=\frac{\gamma Q}{4\pi\epsilon_0}\frac{3\gamma^2v^2xz}{c^2D^{5/2}}\hat{\mathbf{y}}
-			\]
-			and the other components are zero.
-			\[
-				\frac{\partial\mathbf{B}}{\partial t}=\frac{1}{c^2}\frac{\partial}{\partial t}(\mathbf{v}\times\mathbf{E})=\frac{1}{c^2}\mathbf{v}\times\frac{\partial\mathbf{E}}{\partial t}
-			\]
-			Compute
-			\[
-				\frac{\partial E_z}{\partial t}=\frac{\gamma Q}{4\pi\epsilon_0}\frac{3\gamma^2xzv}{D^{5/2}}
-			\]
-			\[
-				\frac{\partial\mathbf{B}}{\partial t}=\frac{v}{c^2}\hat{\mathbf{x}}\times\frac{\gamma Q}{4\pi\epsilon_0}\frac{3\gamma^2xzv}{D^{5/2}}\hat{\mathbf{z}}=-\nabla\times\mathbf{E}
-			\]
-		\end{item}
-	\end{enumerate}
+
+	$D_\perp$ is continuous, because $\nabla\cdot\mathbf{D}=\rho_\mathrm{free}$. No free charge so the divergence is zero. By divergence theorem, in flux would equal to out flux. So $D_{\perp,\mathrm{in}}A=D_{\perp,\mathrm{out}}A$, which means $D_\perp$ is continuous across the boundary.
+
+	Because there is no discontinuity in $E_\parallel$, $D_\parallel$ would also be continuous. $\mathbf{D}=\epsilon_0\mathbf{E}+\mathbf{P}$, therefore discontinuity in $D_\parallel$ is the same as in $P_\parallel$. $\mathbf{P}=0$ outside, so $\Delta D_\parallel=-D_{\perp,\mathrm{in}}$.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -178,32 +103,22 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.10) \textit{Energy flow from a wire}\ldots (problem omitted)
+	(10.14) \textit{Boundary conditions on $E$ and $B$}\ldots (problem omitted)
 	% Question
 
 	\textbf{Solution}
-	
-	For the wire being considered as a tube, its magnetic field is
+
+	The equations without free charges or currents are:
 	\[
-		B=\frac{\mu_0I}{2\pi b}
+		\nabla\cdot\mathbf{D}=0,\quad\nabla\times\mathbf{E}=-\partial\mathbf{B}/\partial t;\quad
+		\nabla\cdot\mathbf{B}=0,\quad\nabla\times\mathbf{B}=\mu_0\partial\mathbf{D}/\partial t;
 	\]
-	tangential to the wire. On the other hand for the sphere, its $E$ field is radial
+	Our equations tell us that the net flux out of the volume is zero, so the perpendicular field on one side must equal the perpendicular field on the other. And for the parallel components, we can apply Stokes' theorem to the two ``curl'' equations, with the area chosen to be a thin rectangle, of vanishing area, spanning the surface. Our equations tell us that the line integral around the rectangle is zero, so the parallel field on one side must equal the parallel field on the other. So
 	\[
-		E=\frac{Q}{4\pi\epsilon_0r^2}
+		D_{1,\perp}=D_{2,\perp},\quad E_{1,\parallel}=E_{2,\parallel};\quad
+		B_{1,\perp}=B_{2,\perp},\quad B_{1,\parallel}=B_{2,\parallel};
 	\]
-	So Poynting vector
-	\[
-		S=\frac{EB}{\mu_0}=\frac{QI}{4\pi\epsilon_0r^2\times2\pi b}
-	\]
-	Integrate this over the surface of the tube, on which $da=2\pi b\,dr$
-	\[
-		\int S\,da=\int_R^\infty\frac{QI}{4\pi\epsilon_0r^2\times2\pi b}2\pi b\,dr=\frac{d}{dt}\frac{Q^2}{8\pi\epsilon_0R}
-	\]
-	To see energy stored in the electric field of the sphere, constant $\phi=Q/4\pi\epsilon_0R$
-	\[
-		U=\frac{1}{2}\int\rho\phi{\,}dv=\frac{1}{2}\phi\int\rho{\,}dv=\frac{1}{2}\frac{Q}{4\pi\epsilon_0R}Q=\frac{Q^2}{8\pi\epsilon_0R}
-	\]
-	Therefore energy flow is equal to the energy stored.
+	Since $\mathbf{D}=\epsilon\mathbf{E}$ for a linear dielectric, $\epsilon_1E_{1,\perp}=\epsilon_2E_{2,\perp}$, therefore $E_{2,\perp}$ is discontinuous. But other components are, including the entire $\mathbf{B}$ field.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -211,24 +126,23 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.14) \textit{Sphere with a hole}\ldots (problem omitted)
+	(10.15) \textit{Charge densities on a capacitor}\ldots (problem omitted)
 	% Question
 
 	\textbf{Solution}
 
-	Integral over the circumference $C$ is
+	We know that because the plates are a whole, $V$ must be the same for two regions. So $(C_1+C_2)V=Q$, where $C_1=\frac{\epsilon_0a(b-x)}{s}$, and $C_2=\frac{\kappa\epsilon_0ax}{s}$. Therefore
 	\[
-		\int_C\mathbf{B}\cdot d\mathbf{s}=\mu_0I
+		E=\frac{V}{s}=\frac{Q}{\epsilon_0a(b-x)+\kappa\epsilon_0ax}=\frac{Q}{\epsilon_0a(b+x\chi_e)}
 	\]
-	And integral over the surface $S$ is
+	So
 	\[
-		\int_S\left(\mu_0\epsilon_0\frac{\partial\mathbf{E}}{\partial t}+\mu_0\mathbf{J}\right)\cdot d\mathbf{a}
+		\sigma_1=\epsilon_0E=\frac{Q}{a(b+x\chi_e)}
 	\]
-	but the wire goes through the hole, so $\mathbf{J}=0$. Therefore, becuase the charge $Q(t)=It$, and $E=\frac{Q}{4\pi\epsilon_0r^2}$,
 	\[
-		\mu_0\epsilon_0\frac{\partial}{\partial t}\int_S\mathbf{E}\cdot d\mathbf{a}=\mu_0\epsilon_0\frac{\partial}{\partial t}\left(\frac{It}{4\pi\epsilon_0r^2}\cdot4\pi r^2\right)=\mu_0I
+		\sigma_2=\kappa\epsilon_0E=\frac{\kappa Q}{a(b+x\chi_e)}
 	\]
-	Therefore the integral form of Maxwell's equation is satisfied.
+	which are indeed decreasing as $x$ increases.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -236,20 +150,27 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.15) \textit{Field inside a discharging capacitor}\ldots (problem omitted)
+	(10.17) \textit{Maximum energy storage}\ldots (problem omitted)
 	% Question
 
 	\textbf{Solution}
 
-	Imagine a circle $C$ centered with the direction of the wire, with radius $r$, so that $P$ lies on the circle. If the magnetic field $B$ is constant,
+	We know dielectric strength
 	\[
-		\int_C\mathbf{B}\cdot d\mathbf{s}=2\pi rB
+		E_\mathrm{max}=\frac{\SI{14}{\kilo\volt}}{\SI{0.00254}{\cm}}=\SI{5.512e8}{\volt\per\meter}
 	\]
-	On the other hand, no current passes through the circle, for which $\mathbf{J}=0$. $\mathbf{E}=\frac{\sigma}{\epsilon_0}=\frac{Q}{\pi b^2\epsilon_0}$. $a=2\pi b^2$.
+	So
 	\[
-		\int_S\left(\mu_0\epsilon_0\frac{\partial\mathbf{E}}{\partial t}+\mu_0\mathbf{J}\right)\cdot d\mathbf{a}=\mu_0\epsilon_0\int_S\frac{\partial\mathbf{E}}{\partial t}\cdot d\mathbf{a}=\mu_0\epsilon_0\int_S\frac{\mathbf{I}}{\pi b^2\epsilon_0}\cdot d\mathbf{a}=\frac{\mu_0r^2I}{b^2}
+		U_\mathrm{max}=\int\frac{\epsilon{E_\mathrm{max}}^2}{2}\,dV=\frac{\epsilon{E_\mathrm{max}}^2\rho}{2}=\frac{\kappa\epsilon_0{E_\mathrm{max}}^2\rho}{2}=\SI{6.12e9}{\joule\per\kg}
 	\]
-	Therefore $2\pi rB=\frac{\mu_0r^2I}{b^2}$, or $B=\frac{\mu_0Ir}{2\pi b^2}$.
+	The mass of the dielectric is 75\% of the total mass. So
+	\[
+		mgh=0.75U_\mathrm{max}m
+	\]
+	and
+	\[
+		h=\frac{3U_\mathrm{max}}{4g}=\SI{4.68e8}{\meter}
+	\]
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -257,25 +178,22 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.20) \textit{Kicked by a wave}\ldots (problem omitted)
+	(10.24) \textit{Field lines of a dipole}
+
+	A field line in the dipole field is described in polar coordinates by the very simple equation $r=r_0\sin^2\theta$, in which $r_0$ is the radius at which the field line passes through the equatorial plane of the dipole. Show that this is true by demonstrating that at any point on that curve the tangent has the same direction as the dipole field.
 	% Question
 
 	\textbf{Solution}
-	\begin{equation}\tag{9.28}
-		\mathbf{E}=\frac{E_0\hat{\mathbf{y}}}{1+\frac{{(x+ct)}^2}{l^2}},\quad\mathbf{B}=\frac{-(E_0/c)\hat{\mathbf{z}}}{1+\frac{{(x+ct)}^2}{l^2}}
-	\end{equation}
-	The change in momentum, when $x$ as well as $B$ is negligible
+
+	The equatorial plane is the plane bisecting the dipole. The equation $r=r_0\sin^2\theta\hat{r}$, which apperently should be pointing at the $\hat{r}$ direction, creates dumbell shapes around the dipole. So the tangent direction of the equation
 	\[
-		\Delta\mathbf{p}=\int\mathbf{F}\,dt=e\hat{\mathbf{y}}\times\SI{100}{\kilo\volt\per\m}\int_{-\infty}^\infty\frac{dt}{1+\frac{{(ct)}^2}{l^2}}=\frac{e\pi l}{c}\hat{\mathbf{y}}\times\SI{100}{\kilo\volt\per\m}
+		\frac{\partial r}{\partial\theta}=r_0\left(2\sin\theta\cos\theta\hat{r}+\sin^2\theta\frac{\partial\hat{r}}{\partial\theta}\right)=r_0\sin\theta\left(2\cos\theta\hat{r}+\sin\theta\hat{\theta}\right)
 	\]
-	So velocity
+	And the field far away from the dipole is
 	\[
-		v=\frac{p}{m}=\frac{e\pi l}{mc}\hat{\mathbf{y}}\times\SI{100}{\kilo\volt\per\m}
+		\mathbf{E}=\frac{P}{4\pi\epsilon_0r^2}\left(2\cos\theta\hat{r}+\sin\theta\hat{\theta}\right)
 	\]
-	So position
-	\[
-		s=vt=\frac{e\pi l}{mc}\hat{\mathbf{y}}\times\SI{1e5}{\volt\per\m}\times\SI{1e-6}{\s}\approx0.10l\hat{\mathbf{y}}
-	\]
+	So they are pointing at the same direction.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -283,42 +201,28 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.22) \textit{Plane-wave pulse}\ldots (problem omitted)
+	(10.37) \textit{$E$ at the center of a polarized sphere}
+
+	If you don't trust the $\mathbf{E}=-\mathbf{P}/3\epsilon_0$ result we obtained in Section 10.9 for the field inside a uniformly polarized sphere, you will find it more believable if you check it in a special case. By direct integration of the contributions from the $\sigma=P\cos\theta$ surface charge density, show that the field at the center is directed downward (assuming $\mathbf{P}$ points upward) with magnitude $P/3\epsilon_0$.
 	% Question
 
 	\textbf{Solution}
-	\begin{enumerate}[label = (\alph*)]
-		\begin{item}
-			Use Amp\`{e}re's law
-			\[
-				\oint\mathbf{B}\cdot d\mathbf{l}=\int_S\left(\mu_0\epsilon_0\frac{\partial\mathbf{E}}{\partial t}+\mu_0\mathbf{J}\right)\cdot d\mathbf{a}
-			\]
-			Only the section inside the slab contributes to the integral
-			\[
-				\oint\mathbf{B}\cdot d\mathbf{l}=Bl
-			\]
-			and
-			\[
-				\int_S\left(\mu_0\epsilon_0\frac{\partial\mathbf{E}}{\partial t}+\mu_0\mathbf{J}\right)\cdot d\mathbf{a}=\mu_0\epsilon_0\frac{\partial}{\partial t}\int_S\mathbf{E}\cdot d\mathbf{a}=\mu_0\epsilon_0\frac{\partial\Phi_E}{\partial t}=\mu_0\epsilon_0 vEl
-			\]
-			So $c^2B=vE$.
-		\end{item}
-		\begin{item}
-			Use Faraday's law
-			\[
-				\oint\mathbf{E}\cdot d\mathbf{s}=-\frac{d\Phi_B}{dt}
-			\]
-			This time let the loop be into the page, perpendicular to $\mathbf{B}$. Normal vector points upward.
-			\[
-				-\frac{d\Phi_B}{dt}=Bvl
-			\]
-			\[
-				\oint\mathbf{E}\cdot d\mathbf{s}=El
-			\]
-			So $E=Bv$
-		\end{item}
-	\end{enumerate}
-	After all $v=c$.
+
+	Consider a ring on the spherical sheet. An element
+	\begin{align*}
+		dq&=\sigma\ da \\
+		&=P\cos\theta R\sin\theta R\ d\theta\ d\phi \\
+		&=PR^2\sin\theta\cos\theta\ d\theta\ d\phi \\
+		&=2\pi PR^2\sin\theta\cos\theta\ d\theta
+	\end{align*}
+	So the vertical component of the field is
+	\[
+		dE_z=\frac{1}{4\pi\epsilon_0R^2}dq\cdot\cos\theta=\frac{P\sin\theta\cos^2\theta\ d\theta}{2\epsilon_0}
+	\]
+	The field is then
+	\[
+		E_z=\int dE_z=\frac{P}{2\epsilon_0}\int_0^\pi\sin\theta\cos^2\theta\ d\theta=\frac{P}{2\epsilon_0}\frac{2}{3}=\frac{P}{3\epsilon_0}
+	\]
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -326,15 +230,32 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.30) \textit{Comparing the energy densities}
+	(10.41) \textit{Discontinuity in $D_\parallel$}
 
-	Consider the capacitor example in Section 9.6.2, but now let the current change in a way that makes the electric field inside the capacitor take the form of $E(t)=E_0\cos\omega t$. The induced magnetic field is given in Eq.~(9.46). Show that the energy density of the magnetic field is much smaller than the energy density of the electric field, provided that the time scale of $\omega$ (namely $2\pi/\omega$) is much longer than the time it takes light to travel across the diameter of the capacitor disks. (As in Problem 9.6, we are ignoring higher-order effects.)
+	Consider the polarized sphere from Section 10.9. Using the forms of the internal and external electric fields, find the discontinuity in $D_\parallel$ across the surface of the sphere, as a function of $\theta$.
 	% Question
 
 	\textbf{Solution}
 	\[
-		B=\frac{\mu_0\epsilon_0r}{2}\frac{\partial E}{\partial t}=-\frac{\mu_0\epsilon_0r}{2}E_0\sin\omega t
+		\mathbf{D}=\epsilon\mathbf{E}+\mathbf{P}
 	\]
+	For the inside $\mathbf{D}=\frac{2}{3}\mathbf{P}$, so the parallel component is
+	\[
+		D_{\parallel,\mathrm{in}}=\frac{2P\sin\theta}{3}\hat{\theta}
+	\]
+	and the perpendicular component is
+	\[
+		D_{\perp,\mathrm{in}}=\frac{2P\cos\theta}{3}\hat{r}
+	\]
+	The field outside is a dipole field
+	\[
+		\mathbf{E}_\mathrm{out}=\frac{P}{3\epsilon_0}\left(2\cos\theta\hat{r}+\sin\theta\hat{theta}\right)
+	\]
+	and $\mathbf{D}_\mathrm{out}=\epsilon_0\mathbf{E}_\mathrm{out}$, so
+	\[
+		D_{\parallel,\mathrm{out}}=\frac{P\sin\theta}{3}\hat{\theta}
+	\]
+	So the discontinuity is $\frac{P\sin\theta}{3}$.
 \end{homeworkProblem}
 
 %----------------------------------------------------------------------------------------
@@ -342,10 +263,35 @@
 %----------------------------------------------------------------------------------------
 
 \begin{homeworkProblem}
-	(9.32) \textit{A Lorentz invariant}\ldots (problem omitted)
+	(10.42) \textit{Energy density in a dielectric}
+
+	By considering how the introduction of a dielectric changes the energy stored in a capacitor, show that the correct expression for the energy density in a dielectric must be $\epsilon E^2/2$. Then compare the energy stored in the electric field with that stored in the magnetic field in the wave studied in Section 10.15.
 	% Question
 
 	\textbf{Solution}
+
+	The energy stored in a capacitor is $\frac{1}{2}CV^2$, where in a parallel plate $C=\frac{\kappa\epsilon_0 A}{d}$, and $E=V/d$. So
+	\[
+		U=\frac{1}{2}CV^2=\frac{1}{2}\frac{\kappa\epsilon_0 A}{d}E^2d^2=\frac{1}{2}\epsilon AE^2d
+	\]
+	The energy density is $U$ divided by volume $Ad$, which is exactly $\epsilon E^2/2$.
+
+	For the problem, the energy density of the electric field is
+	\[
+		U_E=\frac{1}{2}\epsilon E^2
+	\]
+	and of the magnetic field is
+	\[
+		U_B=\frac{1}{2}\frac{B^2}{\mu_0}
+	\]
+	The average value of the two fields are simply $\langle E\rangle=E_0/2$, and $\langle B\rangle=B_0/2$. Because in this field $E_0=\pm\frac{B_0}{\sqrt{\mu_0\epsilon}}$,
+	\[
+		U_E=\frac{1}{8}\epsilon{\left(\frac{B_0}{\sqrt{\mu_0\epsilon}}\right)}^2
+	\]
+	\[
+		U_B=\frac{1}{8}\frac{{B_0}^2}{\mu_0}
+	\]
+	So the energy stored in each of the two fields turn out to be equal.
 \end{homeworkProblem}
 %----------------------------------------------------------------------------------------
 
